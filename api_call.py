@@ -7,8 +7,9 @@ from urllib.parse import quote
 
 def getCoordinates(place):
     place = place.replace(' ', '%20')
-    api_link = "https://api.mapbox.com/geocoding/v5/mapbox.places/{}.json?access_token=pk.eyJ1Ijoib20tcmF3YWwiLCJhIjoiY2tvcXd5OWlvMHo5cTJwc2pnNm5zdmc1eiJ9.9rBCyMoTb7TgWpsSQahwkA".format(
-        place)
+    mapbox_key = 'pk.eyJ1Ijoib20tcmF3YWwiLCJhIjoiY2tvcXd5OWlvMHo5cTJwc2pnNm5zdmc1eiJ9.9rBCyMoTb7TgWpsSQahwkA'
+    api_link = "https://api.mapbox.com/geocoding/v5/mapbox.places/{}.json?access_token={}".format(
+        place, mapbox_key)
     api_get = requests.get(api_link)
     api_get_json = api_get.json()
     place_name, long, lat = api_get_json['features'][0]['place_name'], api_get_json['features'][0][
@@ -20,9 +21,9 @@ def getCoordinates(place):
 
 def getLiveWeather(lat, long, place_name):
     url = "https://api.climacell.co/v3/weather/realtime"
-
+    climacell_key = "nZBN8tA17HfWZgCiRx56lUrRXBiD04tG"
     querystring = {"lat": lat, "lon": long, "unit_system": "si", "fields": [
-        "temp", "feels_like", "humidity", "wind_speed", "precipitation", "precipitation_type", "weather_code"], "apikey": "nZBN8tA17HfWZgCiRx56lUrRXBiD04tG"}
+        "temp", "feels_like", "humidity", "wind_speed", "precipitation", "precipitation_type", "weather_code"], "apikey": climacell_key}
 
     headers = {"Accept": "application/json"}
 
