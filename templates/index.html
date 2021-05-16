@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Weather App</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-+0n0xVW2eSR5OomGNYDnhzAbDsOXxcvSN1TPprVMTNDbiYZCxYbOOl7+AMvyTG2x" crossorigin="anonymous">
+</head>
+
+<body style="background-image: url('/static/bg.jpg')">
+    <!-- <p>{{context}}</p> -->
+    <div class="container">
+        <h1>Enter the Location to Check weather</h1>
+        <form action="" method="post">
+            <div class="input-group mb-3">
+                <span class="input-group-text" id="basic-addon1">Location</span>
+                <input type="text" name='place_str' class="form-control" placeholder="Enter the location"
+                    aria-label="Username" aria-describedby="basic-addon1">
+            </div>
+
+            <div class="col-12">
+                <button class="btn btn-primary" type="submit">Submit</button>
+            </div>
+        </form>
+    </div>
+    <div class="container">
+        {{context}}
+    </div>
+
+
+</body>
+
+</html>

@@ -38,7 +38,7 @@ def getLiveWeather(lat, long, place_name):
     ans['Precipitation'] = '{} mm/hr'.format(
         response['precipitation']['value'])
     ans['Precipitation_Type'] = response['precipitation_type']['value']
-    ans['Weather_Code'] = response['weather_code']
+    ans['Weather_Code'] = response['weather_code']['value']
     return ans
 
 
