@@ -14,7 +14,7 @@ def home():
         return render_template('index.html', context=context)
     else:
 
-        return render_template('index.html')
+        return render_template('index.html', context=False)
 
 
 if __name__ == '__main__':
